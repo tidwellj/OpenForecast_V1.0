@@ -70,7 +70,7 @@
             <ColumnDefinition Width="299*"/>
         </Grid.ColumnDefinitions>
         <TabControl x:Name="myTabControl" HorizontalAlignment="Right" Height="423" Margin="0,10,0,-12" VerticalAlignment="Top" Width="790" Grid.ColumnSpan="3" BorderBrush="#001DBB9F" Background="#006E9DD1"   >
-            <TabItem Header="TabItem" Visibility="Hidden" Height="22" VerticalAlignment="Top"
+            <TabItem Header="TabItem" Visibility="Visible" Height="22" VerticalAlignment="Top"
                      >
                 <Grid Margin="0,-26,-6,-3" Background="#00000000">
                     <Grid.RowDefinitions>
@@ -79,40 +79,43 @@
                         <RowDefinition Height="24*"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="10*"/>
-                        <ColumnDefinition Width="22*"/>
-                        <ColumnDefinition Width="51*"/>
-                        <ColumnDefinition Width="103*"/>
-                        <ColumnDefinition Width="177*"/>
-                        <ColumnDefinition Width="25*"/>
-                        <ColumnDefinition Width="103*"/>
-                        <ColumnDefinition Width="275*"/>
+                        <ColumnDefinition Width="11*"/>
+                        <ColumnDefinition Width="23*"/>
+                        <ColumnDefinition Width="12*"/>
+                        <ColumnDefinition Width="40*"/>
+                        <ColumnDefinition Width="107*"/>
+                        <ColumnDefinition Width="183*"/>
+                        <ColumnDefinition Width="26*"/>
+                        <ColumnDefinition Width="106*"/>
+                        <ColumnDefinition Width="284*"/>
                     </Grid.ColumnDefinitions>
-                    <Label x:Name="testlab" Content="Label" HorizontalAlignment="Right" Margin="128,5,0,0" VerticalAlignment="Top" Grid.Column="4"/>
-                    <Image x:Name="Current_temp" Height="50" Margin="15,78,0,0" VerticalAlignment="Top" Width="50" Grid.Column="4" Grid.RowSpan="2" HorizontalAlignment="Center"/>
-                    <Grid Grid.ColumnSpan="3" Margin="14,31,83,39" Grid.RowSpan="3" Grid.Column="1"/>
-                    <Rectangle x:Name="MainMenu" Fill="#BFFFFFFF" HorizontalAlignment="Left" Height="287" Stroke="#00000000" VerticalAlignment="Top" Width="395" Margin="37,13,0,0" Grid.Column="3" Grid.ColumnSpan="5" Grid.RowSpan="2" RadiusY="13.5" RadiusX="13.5" Grid.Row="1"/>
-                    <Label x:Name="Current_Temp_Text" Content="--" HorizontalAlignment="Right"  Margin="0,108.5,38.5,0" VerticalAlignment="Top" Width="Auto" Height="Auto"  FontSize="72" Grid.Column="4" Grid.Row="1"/>
-                    <Rectangle x:Name="SideMenu" Fill="#BFFFFFFF" HorizontalAlignment="Left" Height="287" Stroke="#00000000" VerticalAlignment="Top" Width="250" Margin="18,13,0,0" Grid.Column="7" Grid.RowSpan="2" RadiusY="13.167" RadiusX="13.167" Grid.Row="1"/>
+                    <Label x:Name="testlab" Content="Label" HorizontalAlignment="Right" Margin="0,5,0.5,0" VerticalAlignment="Top" Grid.Column="5"/>
+                    <Image x:Name="Current_temp" Height="50" Margin="74,78,58.5,0" VerticalAlignment="Top" Width="50" Grid.Column="5" Grid.RowSpan="2" HorizontalAlignment="Center"/>
+                    <Grid Grid.ColumnSpan="4" Margin="13.5,31,83,39" Grid.RowSpan="3" Grid.Column="1"/>
+                    <Rectangle x:Name="MainMenu" Fill="#BFFFFFFF" HorizontalAlignment="Left" Height="286" Stroke="#00000000" VerticalAlignment="Top" Width="396" Margin="36.5,13.5,0,0" Grid.Column="4" Grid.ColumnSpan="5" Grid.RowSpan="2" RadiusY="13.5" RadiusX="13.5" Grid.Row="1"/>
+                    <Label x:Name="Current_Temp_Text" Content="--" HorizontalAlignment="Right"  Margin="0,108.5,38.5,0" VerticalAlignment="Top" Width="Auto" Height="Auto"  FontSize="72" Grid.Column="5" Grid.Row="1"/>
+                    <Rectangle x:Name="SideMenu" Fill="#BFFFFFFF" HorizontalAlignment="Left" Height="286" Stroke="#00000000" VerticalAlignment="Top" Width="250" Margin="17.5,13.5,0,0" Grid.Column="8" Grid.RowSpan="2" RadiusY="13.167" RadiusX="13.167" Grid.Row="1"/>
 
-                    <Image Grid.Column="7" HorizontalAlignment="Left" Height="32" Margin="44.41,34,0,0" Grid.Row="1" VerticalAlignment="Top" Width="32" Source="arrowup.png"/>
-                    <Image x:Name="SunSet" Grid.Column="7" HorizontalAlignment="Left" Height="32" Margin="44.41,71,0,0" Grid.Row="1" VerticalAlignment="Top" Width="32" Source="goodad.png"/>
-                    <Image x:Name="Humidity" Grid.Column="7" HorizontalAlignment="Left" Height="32" Margin="44.41,108,0,0" Grid.Row="1" VerticalAlignment="Top" Width="32" Source="drop.png"/>
-                    <Image x:Name="Dewpoint" Grid.Column="7" HorizontalAlignment="Left" Height="32" Margin="44.41,145,0,0" Grid.Row="1" VerticalAlignment="Top" Width="32" Source="rect882.png"/>
-                    <Image x:Name="Pressure" Grid.Column="7" HorizontalAlignment="Left" Height="32" Margin="44.41,182,0,0" Grid.Row="1" VerticalAlignment="Top" Width="32" Source="pressure.png"/>
-                    <Image x:Name="CurrentWeatherImage" Grid.Column="3" HorizontalAlignment="Left" Height="88" Margin="62.5,33.5,0,0" Grid.Row="1" VerticalAlignment="Top" Width="88" Grid.ColumnSpan="2"/>
-                    <Label x:Name="SunRise" Content="--" Grid.Column="7" HorizontalAlignment="Left" Margin="97.41,34,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14"/>
-                    <Label x:Name="SunSet1" Content="--" Grid.Column="7" HorizontalAlignment="Left" Margin="97.41,71,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14"/>
-                    <Label x:Name="Humidity1" Content="--" Grid.Column="7" HorizontalAlignment="Left" Margin="97.41,108,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14"/>
-                    <Label x:Name="DewPoint" Content="--" Grid.Column="7" HorizontalAlignment="Left" Margin="97.41,148,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14"/>
-                    <Label x:Name="Pressure1" Content="--" Grid.Column="7" HorizontalAlignment="Left" Margin="97.41,182,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14"/>
-                    <Label x:Name="UnitLabel" Content="--" Grid.Column="4" HorizontalAlignment="Left" Margin="150,121.5,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="20" Height="50" Width="32"/>
-                    <Label x:Name="Lat" Grid.Column="4" HorizontalAlignment="Left" Margin="72,45,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-                    <Label x:Name="CurrentConditionsLablel" Content="--" Grid.Column="4" HorizontalAlignment="Left" Margin="49,59.5,0,0" Grid.Row="1" VerticalAlignment="Top" Width="136" FontSize="15" Grid.ColumnSpan="2"/>
-                    <Image x:Name="Windspeed" Grid.Column="7" HorizontalAlignment="Left" Height="49" Margin="44.5,258.5,0,0" Grid.Row="1" VerticalAlignment="Top" Width="32" Source="wind.png" Grid.RowSpan="2"/>
-                    <Label x:Name="Windspeed_Label" Content="--" Grid.Column="7" HorizontalAlignment="Left" Margin="97.5,258.5,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" Grid.RowSpan="2"/>
-                    <Image x:Name="Rain" Grid.Column="7" HorizontalAlignment="Left" Margin="44.5,226.5,0,10" Grid.Row="1" Width="32" Source="rain2.png"/>
-                    <Label x:Name="Rain_label" Content="--" Grid.Column="7" HorizontalAlignment="Left" Margin="97.5,226.5,0,13" Grid.Row="1" FontSize="14"/>
+                    <Image Grid.Column="8" HorizontalAlignment="Left" Height="32" Margin="44.5,33.5,0,0" Grid.Row="1" VerticalAlignment="Top" Width="32" Source="arrowup.png"/>
+                    <Image x:Name="SunSet" Grid.Column="8" HorizontalAlignment="Left" Height="32" Margin="44.5,71.5,0,0" Grid.Row="1" VerticalAlignment="Top" Width="32" Source="goodad.png"/>
+                    <Image x:Name="Humidity" Grid.Column="8" HorizontalAlignment="Left" Height="32" Margin="44.5,107.5,0,0" Grid.Row="1" VerticalAlignment="Top" Width="32" Source="drop.png"/>
+                    <Image x:Name="Dewpoint" Grid.Column="8" HorizontalAlignment="Left" Height="32" Margin="44.5,145.5,0,0" Grid.Row="1" VerticalAlignment="Top" Width="32" Source="rect882.png"/>
+                    <Image x:Name="Pressure" Grid.Column="8" HorizontalAlignment="Left" Height="32" Margin="44.5,181.5,0,0" Grid.Row="1" VerticalAlignment="Top" Width="32" Source="pressure.png"/>
+                    <Image x:Name="CurrentWeatherImage" Grid.Column="4" HorizontalAlignment="Left" Height="88" Margin="62.5,33.5,0,0" Grid.Row="1" VerticalAlignment="Top" Width="88" Grid.ColumnSpan="2"/>
+                    <Label x:Name="SunRise" Content="--" Grid.Column="8" HorizontalAlignment="Left" Margin="97.5,33.5,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14"/>
+                    <Label x:Name="SunSet1" Content="--" Grid.Column="8" HorizontalAlignment="Left" Margin="97.5,71.5,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14"/>
+                    <Label x:Name="Humidity1" Content="--" Grid.Column="8" HorizontalAlignment="Left" Margin="97.5,107.5,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14"/>
+                    <Label x:Name="DewPoint" Content="--" Grid.Column="8" HorizontalAlignment="Left" Margin="97.5,147.5,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14"/>
+                    <Label x:Name="Pressure1" Content="--" Grid.Column="8" HorizontalAlignment="Left" Margin="97.5,181.5,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14"/>
+                    <Label x:Name="UnitLabel" Content="--" Grid.Column="5" HorizontalAlignment="Left" Margin="150,121.5,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="20" Height="50" Width="32"/>
+                    <Label x:Name="Lat" Grid.Column="5" HorizontalAlignment="Left" Margin="72,45.5,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+                    <Label x:Name="CurrentConditionsLablel" Content="--" Grid.Column="5" HorizontalAlignment="Left" Margin="49,59.5,0,0" Grid.Row="1" VerticalAlignment="Top" Width="239" FontSize="15" Grid.ColumnSpan="3"/>
+                    <Image x:Name="Windspeed" Grid.Column="8" HorizontalAlignment="Left" Height="49" Margin="44.5,258.5,0,0" Grid.Row="1" VerticalAlignment="Top" Width="32" Source="wind.png" Grid.RowSpan="2"/>
+                    <Label x:Name="Windspeed_Label" Content="--" Grid.Column="8" HorizontalAlignment="Left" Margin="97.5,258.5,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" Grid.RowSpan="2"/>
+                    <Image x:Name="Rain" Grid.Column="8" HorizontalAlignment="Left" Margin="44.5,226.5,0,10" Grid.Row="1" Width="32" Source="rain2.png"/>
+                    <Label x:Name="Rain_label" Content="--" Grid.Column="8" HorizontalAlignment="Left" Margin="97.5,226.5,0,13" Grid.Row="1" FontSize="14"/>
+                    <Label x:Name="CurrentMax" Content="--" Grid.Column="5" HorizontalAlignment="Left" Margin="9.5,232.5,0,0" Grid.Row="1" VerticalAlignment="Top" Width="85"/>
+                    <Label x:Name="CurrentMin" Content="--" Grid.Column="5" HorizontalAlignment="Left" Margin="126.5,232.5,0,0" Grid.Row="1" VerticalAlignment="Top" Width="82" Grid.ColumnSpan="2"/>
                 </Grid>
             </TabItem>
             <TabItem Header="TabItem2" Visibility="Visible" Height="24" Margin="-2,-2,-1.5,0" VerticalAlignment="Bottom"

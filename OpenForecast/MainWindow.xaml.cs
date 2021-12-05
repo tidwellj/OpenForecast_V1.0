@@ -351,6 +351,11 @@ namespace OpenForecast
                 string day6hum = obj.daily[5].humidity;
                 string day7hum = obj.daily[6].humidity;
 
+                //Current day min and max
+                CurrentMax.Content = "Max: " + day1maxb + unitLetter;
+               
+                CurrentMin.Content = "Min: " + day1minb + unitLetter;
+
                 //Check to see if JSON element is null which happens occasionally and causes crashes
 
                 string Days(string x)
@@ -529,7 +534,7 @@ namespace OpenForecast
                     }
                     else if (units == "metric")
                     {
-                        windspeed = " mm/s";
+                        windspeed = " m/s";
                     }
 
                     for (int i = 0; i < c; i++)
