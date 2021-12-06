@@ -647,10 +647,10 @@ namespace OpenForecast
         //Create Notifyicon in system tray
         private void TrayIco(string trayTemp)
         {
-            trayTemp = temperature2;
+            trayTemp = temperature2 + "°";
             string firstText = trayTemp;
 
-            PointF firstLocation = new PointF(-3f, 2f);
+            PointF firstLocation = new PointF(-1.5f, 2f);
 
             string path = System.IO.Path.GetTempPath();
 
@@ -659,7 +659,7 @@ namespace OpenForecast
             //Render current temperature on notify tray icon by using overlay
             using (Graphics graphics = Graphics.FromImage(bitmap))
             {
-                using (Font arialFont = new Font("Arial", 400))
+                using (Font arialFont = new Font("Arial", 325))
                 {
                     graphics.DrawString(firstText, arialFont, System.Drawing.Brushes.Black, firstLocation);
                     graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
@@ -681,7 +681,7 @@ namespace OpenForecast
 
                 notify.Icon = newIcon;
 
-                notify.Text = "Openforecast";
+                notify.Text = temperature2 +  unitLetter;
                 notify.Visible = true;
 
                 notify.MouseDoubleClick += OnNotifyIconDoubleClick;
