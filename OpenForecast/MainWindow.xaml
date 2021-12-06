@@ -70,7 +70,7 @@
             <ColumnDefinition Width="299*"/>
         </Grid.ColumnDefinitions>
         <TabControl x:Name="myTabControl" HorizontalAlignment="Right" Height="423" Margin="0,10,0,-12" VerticalAlignment="Top" Width="790" Grid.ColumnSpan="3" BorderBrush="#001DBB9F" Background="#006E9DD1"   >
-            <TabItem Header="TabItem" Visibility="Visible" Height="22" VerticalAlignment="Top"
+            <TabItem Header="TabItem" Visibility="Hidden" Height="22" VerticalAlignment="Top"
                      >
                 <Grid Margin="0,-26,-6,-3" Background="#00000000">
                     <Grid.RowDefinitions>
@@ -118,7 +118,7 @@
                     <Label x:Name="CurrentMin" Content="--" Grid.Column="5" HorizontalAlignment="Left" Margin="126.5,232.5,0,0" Grid.Row="1" VerticalAlignment="Top" Width="82" Grid.ColumnSpan="2"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="TabItem2" Visibility="Visible" Height="24" Margin="-2,-2,-1.5,0" VerticalAlignment="Bottom"
+            <TabItem Header="TabItem2" Visibility="Hidden" Height="24" Margin="-2,-2,-1.5,0" VerticalAlignment="Bottom"
                      >
                 <Grid x:Name="Page2Grid" Background="#00E5E5E5" Margin="0,-27,0,0">
                     <Grid.RowDefinitions>
@@ -155,7 +155,7 @@
                     <Label x:Name="Day7Labelb" Content="--" Grid.Column="1" HorizontalAlignment="Left" Margin="198,360,0,0" VerticalAlignment="Top" Width="400" FontSize="16" Grid.Row="2"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="TabItem" Visibility="Visible"
+            <TabItem Header="TabItem" Visibility="Hidden"
                      >
                 <Grid x:Name="Page3Grid" Background="#00E5E5E5" Margin="0,-27,0,0">
                     <Grid.ColumnDefinitions>
@@ -174,7 +174,7 @@
                     </RichTextBox>
                 </Grid>
             </TabItem>
-            <TabItem Header="TabItem" Visibility="Visible" Margin="-2.5,2,-1.5,0"
+            <TabItem Header="TabItem" Visibility="Hidden" Margin="-2.5,2,-1.5,0"
                      >
                 <Grid x:Name="Pag42Grid" Background="#00E5E5E5" Margin="0,-27,0,0">
                     <Grid.ColumnDefinitions>
@@ -197,7 +197,7 @@
                     <Label x:Name="Hourlykey" Content="Label" Grid.Column="1" HorizontalAlignment="Left" Margin="56,115,0,0" VerticalAlignment="Top" Width="579"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="TabItem" Visibility="Visible" Height="28" Margin="-2.5,-2,-1.5,0" VerticalAlignment="Bottom"
+            <TabItem Header="TabItem" Visibility="Hidden" Height="28" Margin="-2.5,-2,-1.5,0" VerticalAlignment="Bottom"
                      >
                 <Grid x:Name="Page5Grid" Background="#00E5E5E5" Margin="0,-27,0,0">
                     <Grid.ColumnDefinitions>
