@@ -32,7 +32,7 @@ namespace OpenForecast
         public static string zip;
         public static string currentLat;
         public static string currentLon;
-        public static List<string> emailList = new List<string>();  // arraylist; //<string> emailList = new List<string>();
+        public static List<string> emailList = new List<string>(); 
         public static int emailAlerts;
         public static string currentlat2;
         public static string currentlon2;
@@ -82,7 +82,6 @@ namespace OpenForecast
             //Create Timers for syncing JSON data
 
             timer = new DispatcherTimer();
-            timer2 = new DispatcherTimer();
 
             timer.Interval = TimeSpan.FromMinutes(10);
             timer.Tick += Timer_Tick;
@@ -98,13 +97,11 @@ namespace OpenForecast
 
             //Checks movement location in 10 mile increments as not to sync too often.
             Watcher.MovementThreshold = 16093.4;
+            // Start the watcher.
 
-            // Watcher.TryStart(false, TimeSpan.FromMilliseconds(1000));
             Watcher.Start();
             // Catch the StatusChanged event.
             Watcher.StatusChanged += Watcher_StatusChanged;
-            // Start the watcher.
-            //Watcher.Start();
 
             //On window close remove notifyicon completely.
             Closed += new EventHandler(MainWindow_Closed);
@@ -146,13 +143,15 @@ namespace OpenForecast
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            //Start Weather data Syncing every 10 minutes
+            //Start Weather data syncing every 10 minutes
 
             SyncWeather();
+            //Refresh tray icon
             TrayIco(temperature2);
+            //Refresh city name
             GetCity(currentlat2, currentlon2);
         }
-
+        //Main function for syncing data
         private string SyncWeather()
         {
             try
@@ -169,7 +168,7 @@ namespace OpenForecast
                 json = response.Content;
 
                 dynamic obj = JsonConvert.DeserializeObject(json);
-
+                //Set current day variables
                 string feelsLike = obj.current.feels_like;
                 string sunrise = obj.current.sunrise + obj.timezone_offset;
                 string sunset = obj.current.sunset + obj.timezone_offset;
@@ -191,7 +190,7 @@ namespace OpenForecast
                 }
 
                 //Seven day tab
-
+                //Convert from unix epoch time
                 DateTimeOffset dateTimeOffsetTimeDay1 = DateTimeOffset.FromUnixTimeSeconds(Convert.ToInt32(obj.daily[0].dt));
                 DateTime dateTimeDay1 = dateTimeOffsetTimeDay1.DateTime.ToLocalTime();
 
@@ -247,7 +246,6 @@ namespace OpenForecast
 
                 //Current Temperature
                 string temperature = obj.current.temp;
-                //  UnitLabel.Content = unitLetter;
 
                 string CurrentDay(string x)
                 {
@@ -574,7 +572,6 @@ namespace OpenForecast
                         sw.WriteLine(obj.alerts[i].description + Environment.NewLine);
                         //Alert Emailer
                         emailAlerts = obj.alerts[i].start;
-                        // System.Windows.MessageBox.Show(emailAlerts.ToString());
                         //Check if email alerts are present and prevent duplicate emails being sent
                         if (alertNumber.Contains(emailAlerts))
                         {
@@ -587,7 +584,6 @@ namespace OpenForecast
                             for (int j = 0; j < emailList.Count; j++)
                             {
                                 string text4 = obj.alerts[i].description;
-                                //System.Windows.MessageBox.Show("Weather Alert");
                                 MailMessage mail = new MailMessage();
                                 SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
 
@@ -602,7 +598,6 @@ namespace OpenForecast
                                 SmtpServer.EnableSsl = true;
 
                                 SmtpServer.Send(mail);
-                                //System.Windows.MessageBox.Show("mail Send");
                             }
                         }
                         else
@@ -635,7 +630,6 @@ namespace OpenForecast
             catch (Exception)
             {
                 // Prevent crash and notify user that network is not present
-                //   Location.Content = System.Drawing.Brushes.Red;
 
                 Location.Content = "No network";
                 city = "none";
@@ -773,7 +767,6 @@ namespace OpenForecast
         {
         }
 
-        //Possibly not necessary
         private Bitmap BitmapImage2Bitmap(BitmapImage bitmapImage)
         {
             using (MemoryStream outStream = new MemoryStream())
@@ -972,7 +965,6 @@ namespace OpenForecast
                 binWriter.Close();
                 stream.Close();
             }
-            //System.Windows.MessageBox.Show(emailList.ToString());
         }
 
         //Remove email from list
