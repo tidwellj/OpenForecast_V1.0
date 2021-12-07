@@ -37,13 +37,19 @@ namespace OpenForecast
         public static string currentlat2;
         public static string currentlon2;
         public static string city;
+        //PLace email information here
+        public static string emailAddress = "openforecast02@gmail.com";
+        public static string emailPass = "openforecast02";
+        public static string emailUser = "None4321!!1234";
 
         //Place Openweathermap api key here.
         public static string apiKey = "03cd6c6bf0d2ce05e09c061404818654";
 
         //Atempt to make key more secure by using SecureString for encryption.
         public static SecureString SecureKey = apiKey.Secure();
-
+        public static SecureString SecureEmailAddress = emailAddress.Secure();
+        public static SecureString SecureEmailUser = emailUser.Secure();
+        public static SecureString SecureEmailPass = emailPass.Secure();
         public static string zipCode;
 
         private GeoCoordinateWatcher Watcher = null;
@@ -585,14 +591,14 @@ namespace OpenForecast
                                 MailMessage mail = new MailMessage();
                                 SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
 
-                                mail.From = new MailAddress("openforecast02@gmail.com");
-                                //work on and test this
+                                mail.From = new MailAddress(SecureEmailAddress.Unsecure());
+                                
                                 mail.To.Add(emailList[j]);
                                 mail.Subject = "Weather Alert";
                                 mail.Body = text4;
 
                                 SmtpServer.Port = 587;
-                                SmtpServer.Credentials = new System.Net.NetworkCredential("openforecast02", "None4321!!1234");
+                                SmtpServer.Credentials = new System.Net.NetworkCredential(SecureEmailUser.Unsecure(), SecureEmailPass.Unsecure());
                                 SmtpServer.EnableSsl = true;
 
                                 SmtpServer.Send(mail);
