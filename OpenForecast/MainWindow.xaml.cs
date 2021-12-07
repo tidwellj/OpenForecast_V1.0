@@ -152,10 +152,6 @@ namespace OpenForecast
             try
             {
                 //Retrieve JSON data
-                //string str =
-                //string  jsonText = File.ReadAllText(@"dummy.txt");
-
-                //dynamic obj = JsonConvert.SerializeObject(jsonText);
 
                 var client = new RestClient("https://api.openweathermap.org/data/2.5/onecall?lat=" + currentLat + "&lon="
                      + currentLon + "&units=" + units + "&appid=" + SecureKey.Unsecure());
@@ -177,8 +173,7 @@ namespace OpenForecast
                 string dewPoint = obj.current.dew_point;
                 string clouds = obj.current.weather[0].description;
                 string windspeed = obj.current.wind_speed;
-                // Console.WriteLine(t["name"]); //test
-                // Console.WriteLine(t["age"]);  //test
+
                 string rain;
                 if (obj.current.rain == null)
                 {
@@ -242,9 +237,7 @@ namespace OpenForecast
                 SunSet1.Content = "Sunset: " + dateTime2.ToShortTimeString();
                 Humidity1.Content = "Humidity: " + humidity + "%";
 
-                //  temperature2 = Math.Round(float.Parse(temperature)).ToString();
                 CurrentConditionsLablel.Content = clouds;
-                // sw.WriteLine(string.Format("{0,-15} {1,-15}", DateTime.Now.AddHours(i).ToString("h tt"), HourTemp(i).ToString() + unitLetter + Environment.NewLine));
 
                 //Current Temperature
                 string temperature = obj.current.temp;
@@ -353,7 +346,7 @@ namespace OpenForecast
 
                 //Current day min and max
                 CurrentMax.Content = "Max: " + day1maxb + unitLetter;
-               
+
                 CurrentMin.Content = "Min: " + day1minb + unitLetter;
 
                 //Check to see if JSON element is null which happens occasionally and causes crashes
@@ -681,7 +674,7 @@ namespace OpenForecast
 
                 notify.Icon = newIcon;
 
-                notify.Text = temperature2 +  unitLetter;
+                notify.Text = temperature2 + unitLetter;
                 notify.Visible = true;
 
                 notify.MouseDoubleClick += OnNotifyIconDoubleClick;
@@ -863,7 +856,7 @@ namespace OpenForecast
             }
         }
 
-        //Shut down application completey so it does not hang in debugger
+        //Shut down application completely so it does not hang in debugger
         //and dispose of notifyicon so it does not remain in system tray after
         //application close
         private void MainWindow_Closed(object sender, EventArgs e)
@@ -905,13 +898,8 @@ namespace OpenForecast
                     dynamic obj3 = JsonConvert.DeserializeObject(json3);
                     currentLat = obj3.coord.lat;
                     currentLon = obj3.coord.lon;
-                    System.Windows.MessageBox.Show(currentLat + " " + currentLon);
-
-                    //System.Windows.MessageBox.Show(currentLon);
-                    // city = obj3.name + ", " + obj3.sys.country;
 
                     city = obj3.name + ", " + obj3.sys.country;
-                    System.Windows.MessageBox.Show(city);
                     UnitLabel.Content = unitLetter;
                     Location.Content = city;
                     SyncWeather();
@@ -937,7 +925,6 @@ namespace OpenForecast
                     currentLat = obj4.coord.lat;
                     currentLon = obj4.coord.lon;
 
-                    // city = obj4.name + ", " + obj4.sys.country;
 
                     city = obj4.name + ", " + obj4.sys.country;
 
@@ -974,7 +961,6 @@ namespace OpenForecast
 
                 BinaryWriter binWriter = new BinaryWriter(stream);
                 string listAdd = Newtonsoft.Json.JsonConvert.SerializeObject(emailList);
-                // System.Windows.MessageBox.Show(listAdd);
                 binWriter.Write(listAdd);
 
                 binWriter.Close();
