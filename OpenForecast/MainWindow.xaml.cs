@@ -38,12 +38,12 @@ namespace OpenForecast
         public static string currentlon2;
         public static string city;
         //PLace email information here
-        public static string emailAddress = "openforecast02@gmail.com";
-        public static string emailPass = "openforecast02";
-        public static string emailUser = "None4321!!1234";
+        public static string emailAddress = "User email address here";
+        public static string emailUser = "Username here";
+        public static string emailPass = "User password here";
 
         //Place Openweathermap api key here.
-        public static string apiKey = "03cd6c6bf0d2ce05e09c061404818654";
+        public static string apiKey = "API key here";
 
         //Atempt to make key more secure by using SecureString for encryption.
         public static SecureString SecureKey = apiKey.Secure();
